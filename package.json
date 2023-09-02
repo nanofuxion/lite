@@ -1,0 +1,31 @@
+{
+  "name": "lite",
+  "version": "0.0.1",
+  "description": "A really small desktop app framework for web apps",
+  "main": "cli/main.js",  
+  "files": [
+    "bin/main"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nanofuxion/lite.git"
+  },
+  "keywords": [
+    "lite",
+    "desktop",
+    "pwa",
+    "broswer",
+    "webapp",
+    "app",
+    "small"
+  ],
+  "author": "Nanofuxion <ramnadroj@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nanofuxion/lite/issues"
+  },
+  "homepage": "https://github.com/nanofuxion/lite#readme"
+}
