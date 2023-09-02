@@ -4,7 +4,7 @@
   "description": "A really small desktop app framework for web apps",
   "main": "src/index.js",  
   "bin": {
-    "lite" : "cli/main.js"
+    "lite" : "bin/main"
   }, 
   "files": [
     "bin/main"
