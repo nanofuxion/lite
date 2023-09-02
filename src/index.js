@@ -1,0 +1,1 @@
+module.exports = { cmd: require("./cmd").sendCmd }
