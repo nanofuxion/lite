@@ -17,11 +17,11 @@ Install the package:
 npm install nanofuxion/lite
 ```
 
-The package exposes two commands - `lite dev` and `lite run`. 
+The package exposes two commands - `lite --dev` and `lite`. 
 
-`lite dev` will start the development server specified in the config. 
+`lite ---dev` will start the development server specified in the config. 
 
-`lite run` will serve the static assets and open the browser.
+`lite` will serve the static assets and open the browser exactly as the compiled app would run.
 
 ## Config
 
