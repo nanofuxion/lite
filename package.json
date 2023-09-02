@@ -2,7 +2,7 @@
   "name": "lite",
   "version": "0.0.1",
   "description": "A really small desktop app framework for web apps",
-  "main": "cli/main.js",  
+  "main": "src/index.js",  
   "bin": {
     "lite" : "cli/main.js"
   }, 
