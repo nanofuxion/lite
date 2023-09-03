@@ -1,0 +1,75 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Config",
+    "description": "The Lite configuration object. This configuration file helps specify the details required for running the application, including directories, browser settings, and commands.",
+    "type": "object",
+    "properties": {
+        "name": {
+            "description": "The name of the application",
+            "type": "string"
+        },
+        "app": {
+            "description": "Application-specific settings",
+            "type": "object",
+            "properties": {
+                "devServer": {
+                    "description": "The command to run the development server",
+                    "type": "string"
+                },
+                "devUri": {
+                    "description": "The development uri",
+                    "type": "string"
+                },
+                "dist": {
+                    "description": "The distribution directory",
+                    "type": "string"
+                }
+            },
+            "if": {
+                "anyOf": [{
+                        "required": ["devUri"]
+                    },
+                    {
+                        "required": ["devServer"]
+                    }
+                ]
+            },
+            "then": {
+                "required": ["devServer", "devUri"]
+            },
+            "else": {
+                "minProperties": 1
+            }
+        },
+        "browser": {
+            "description": "Settings for launching the browser",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "The name of the browser to launch",
+                    "type": "string"
+                },
+                "args": {
+                    "description": "Additional arguments for the browser",
+                    "type": "string"
+                }
+            },
+            "required": ["name"]
+        },
+        "cmds": {
+            "description": "Commands for additional operations",
+            "type": "object",
+            "properties": {
+                "bins": {
+                    "description": "List of additional binaries",
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": ["bins"]
+        }
+    },
+    "required": ["name", "app", "browser"]
+}

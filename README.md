@@ -27,7 +27,7 @@ The package exposes two commands - `lite --dev` and `lite`.
 
 lite requires a `lite.config.json` file at the root of the project. 
 
-See [config schema](scheme.json) for details.
+See [config schema](schema.json) for details.
 
 A sample config is shown below:
 
