@@ -1,1 +1,3 @@
-module.exports = { cmd: require("./cmd").sendCmd }
+const sendCmd = require("./cmd");
+
+module.exports = { sendCmd }
