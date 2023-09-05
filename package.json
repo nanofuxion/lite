@@ -2,12 +2,14 @@
   "name": "lite",
   "version": "0.0.1",
   "description": "A really small desktop app framework for web apps",
-  "main": "src/index.js",  
+  "main": "src/index.js",
   "bin": {
-    "lite" : "bin/main"
-  }, 
+    "lite": "bin/main",
+    "lite-build": "bin/build"
+  },
   "files": [
-    "bin/main"
+    "bin/main",
+    "bin/build"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

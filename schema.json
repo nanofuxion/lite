@@ -23,7 +23,16 @@
                 "dist": {
                     "description": "The distribution directory",
                     "type": "string"
+                },
+                "buildCommand": {
+                    "description": "The web framework build command",
+                    "type": "string"
+                },
+                "icon": {
+                    "description": "The distribution icon",
+                    "type": "string"
                 }
+
             },
             "if": {
                 "anyOf": [{
