@@ -10,7 +10,7 @@ ___
 
 A lightweight framework for running web apps on the desktop.
 
-lite ~~searches for then uses~~ already installed chromium/firefox browsers, creates a new profile specific the the web app and launches your web app with a websocket server for lite specific features such as executing commands.
+lite searches for then uses already installed chromium/firefox browsers, creates a new profile specific the the web app and launches your web app with a websocket server for lite specific features such as executing commands.
 
 ## Usage
 
