@@ -56,6 +56,27 @@ A sample config is shown below:
   }
 }
 ```
+## Using the `lite` API
+
+The lite package exports a `sendCmd` function that allows sending commands to the running lite app over a WebSocket connection. 
+
+First, import the `sendCmd` function:
+
+```js
+const { sendCmd } = require('lite');
+```
+
+Then call sendCmd with the command to execute:
+
+```js
+sendCmd('my-command');
+```
+
+This will send the command over the WebSocket connection to lite.
+
+### Reconnection:
+
+The API has built-in reconnection logic. If the WebSocket connection is lost, it will attempt to reconnect every 5 seconds.
 
 ## Compiling
 
