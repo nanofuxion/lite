@@ -9,6 +9,8 @@ ___
 
 A lightweight framework for running web apps on the desktop.
 
+lite ~~searches for then uses~~ already installed chromium/firefox browsers, creates a new profile specific the the web app and launches your web app with a websocket server for lite specific features such as executing commands.
+
 ## Usage
 
 Install the package:
@@ -17,11 +19,13 @@ Install the package:
 npm install nanofuxion/lite
 ```
 
-The package exposes two commands - `lite --dev` and `lite`. 
-
-`lite ---dev` will start the development server specified in the config. 
+The package exposes 3 commands - `lite --dev` ,  `lite` and `lite-build`. 
 
 `lite` will serve the static assets and open the browser exactly as the compiled app would run.
+
+`lite --dev` will start the development server specified in the config. 
+
+`lite-build` will build an AppImage of your web app. 
 
 ## Config
 
@@ -55,8 +59,8 @@ Coming soon*
 
 ## TODOS:
 
-- Add linuxdeploy app image script
-- write browser finder to fine compatible chromium/Firefox based browser to launch from.
+- ~~Add linuxdeploy app image script~~
+- ~~write browser finder to find a compatible chromium/Firefox based browser to launch from.~~
 - Add support for `macOS` and `windows` via Os specific browser finder scripts.
 
 

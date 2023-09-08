@@ -55,15 +55,45 @@
             "type": "object",
             "properties": {
                 "name": {
-                    "description": "The name of the browser to launch",
-                    "type": "string"
+                    "description": "The name of the browser to launch when debugging",
+                    "type": "string",
+                    "enum": ["firefox", "chrome", "chromium", "brave", "waterfox", "any", "edge", ""]
                 },
                 "args": {
-                    "description": "Additional arguments for the browser",
+                    "description": "Additional browser arguments for the browser will not include if name is \"any\" or empty ",
                     "type": "string"
                 }
             },
-            "required": ["name"]
+            "required": ["name"],
+            "allOf": [{
+                "if": {
+                    "oneOf": [{
+                            "properties": {
+                                "name": {
+                                    "const": "any"
+                                }
+                            }
+                        },
+                        {
+                            "properties": {
+                                "name": {
+                                    "const": ""
+                                }
+                            }
+                        }
+                    ]
+                },
+                "then": {
+                    "not": {
+                        "required": ["args"],
+                        "properties": {
+                            "args": {
+                                "not": {}
+                            }
+                        }
+                    }
+                }
+            }]
         },
         "cmds": {
             "description": "Commands for additional operations",
