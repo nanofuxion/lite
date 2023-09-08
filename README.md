@@ -2,6 +2,7 @@ ___
 ___
 # !!!!NOT PRODUCTION READY!!!!
 - I started working on this project because because `gstreamer` is broken for `tauri` on `steamos` but `chrome`, `firefox` and other prebuilt browser work fine.
+- currently only supports linux 
 ___
 ___
 
@@ -41,13 +42,17 @@ A sample config is shown below:
   "app": { 
     "devServer": "npm run my_framework_dev_server",
     "devUri": "http://localhost:3000",
-    "dist": "dist"
+    "dist": "dist",
+    "icon": "./assets/icons/32.png",
+    "buildCommand": "yarn build"
   },
   "browser": {
     "name": "firefox"
   },
   "cmds": {
-    "bins": []  
+    "bins": [
+        "steam"
+    ]  
   }
 }
 ```
