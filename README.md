@@ -2,6 +2,7 @@ ___
 ___
 # !!!!NOT PRODUCTION READY!!!!
 - I started working on this project because because `gstreamer` is broken for `tauri` on `steamos` but `chrome`, `firefox` and other prebuilt browser work fine.
+- currently only supports linux 
 ___
 ___
 
@@ -9,7 +10,7 @@ ___
 
 A lightweight framework for running web apps on the desktop.
 
-lite ~~searches for then uses~~ already installed chromium/firefox browsers, creates a new profile specific the the web app and launches your web app with a websocket server for lite specific features such as executing commands.
+lite searches for then uses already installed chromium/firefox browsers, creates a new profile specific the the web app and launches your web app with a websocket server for lite specific features such as executing commands.
 
 ## Usage
 
@@ -41,16 +42,41 @@ A sample config is shown below:
   "app": { 
     "devServer": "npm run my_framework_dev_server",
     "devUri": "http://localhost:3000",
-    "dist": "dist"
+    "dist": "dist",
+    "icon": "./assets/icons/32.png",
+    "buildCommand": "yarn build"
   },
   "browser": {
     "name": "firefox"
   },
   "cmds": {
-    "bins": []  
+    "bins": [
+        "steam"
+    ]  
   }
 }
 ```
+## Using the `lite` API
+
+The lite package exports a `sendCmd` function that allows sending commands to the running lite app over a WebSocket connection. 
+
+First, import the `sendCmd` function:
+
+```js
+const { sendCmd } = require('lite');
+```
+
+Then call sendCmd with the command to execute:
+
+```js
+sendCmd('my-command');
+```
+
+This will send the command over the WebSocket connection to lite.
+
+### Reconnection:
+
+The API has built-in reconnection logic. If the WebSocket connection is lost, it will attempt to reconnect every 5 seconds.
 
 ## Compiling
 
